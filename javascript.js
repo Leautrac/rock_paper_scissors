@@ -30,37 +30,43 @@ function playGame(){
     let winner = "";
     function playRound(userChoice, computerChoice){
         if (userChoice == computerChoice){
-            return "Draw, play again";
+            console.log("Draw, play again");
         }else if (userChoice == "rock"){
             if(computerChoice == "paper"){
                 computerScore ++;
                 winner = "computer";
+                console.log(`Computer won, user: ${userScore}, computer: ${computerScore}`);
             }else {
                 userScore ++;
                 winner = "user";
+                console.log(`You won, user: ${userScore}, computer: ${computerScore}`);
             }
         }else if (userChoice == "paper"){
             if (computerChoice == "scissors"){
                 computerScore ++;
                 winner = "computer";
+                console.log(`Computer won, user: ${userScore}, computer: ${computerScore}`);
             }else {
                 userScore ++;
                 winner = "user";
+                console.log(`You won, user: ${userScore}, computer: ${computerScore}`);
             }
         }else if (userChoice == "scissors"){
             if (computerChoice == "rock"){
                 computerScore ++;
                 winner = "computer";
+                console.log(`Computer won, user: ${userScore}, computer: ${computerScore}`);
             }else {
                 userScore ++;
                 winner = "user";
+                console.log(`You won, user: ${userScore}, computer: ${computerScore}`);
             }
         }else {
             return "issue";
         }
     }
-const userSelection = getUserChoice();
-const computerSelection = getComputerChoice();
-console.log(playRound(userSelection, computerSelection));
-console.log(`Your socre is : ${userScore}, the computer score is: ${computerScore}. The winner is ${winner} !!!`);
+    const userSelection = getUserChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(userSelection, computerSelection));
 }
+console.log(playGame());
